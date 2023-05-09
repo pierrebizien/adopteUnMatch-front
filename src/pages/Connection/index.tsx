@@ -5,7 +5,7 @@ function Connection()
     return (
         <div>
             <NavBarEmpty />
-            <h1>Connexiooooon</h1>
+            <h1>Connexiooon</h1>
         </div>
     )
 }
