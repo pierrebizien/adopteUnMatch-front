@@ -1,4 +1,3 @@
-import React from "react";
 import LogoSpan from "./LogoSpan";
 import "./styles/navBarEmpty.css"
 
