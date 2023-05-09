@@ -1,0 +1,11 @@
+.navbarempty{
+    background-color: rgb(11, 11, 11);
+    width: 100vw;
+    height: 5vh;
+    position: fixed;
+    top: 0;
+}
+
+.dotcom {
+    color: rgb(161, 0, 0);
+}
