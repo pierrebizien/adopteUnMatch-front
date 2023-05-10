@@ -1,0 +1,19 @@
+.navbarempty{
+    background-color: rgb(222, 70, 0);
+    width: 100vw;
+    height: 7vh;
+    position: fixed;
+    top: 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbarempty-fake{
+    @extend .navbarempty;
+    position:relative;
+}
+
+.dotcom {
+    color: rgb(0, 0, 0);
+}

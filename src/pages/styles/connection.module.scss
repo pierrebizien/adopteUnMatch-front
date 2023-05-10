@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,700&display=swap');
+
+.inscriptionBox {
+    background-color: rgb(233, 233, 233);
+    width: 50vw;
+    height: 50vh;
+}
+
+.flexCenter{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.connexionTitle
+{
+    align-self: flex-start;
+    // margin-left:1vw;
+    font-family: 'Poppins', sans-serif;
+    font-size: 5vw;
+    margin: 5vw;
+
+}
