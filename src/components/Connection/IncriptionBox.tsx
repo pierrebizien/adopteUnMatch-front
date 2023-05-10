@@ -9,18 +9,18 @@ function InscriptionBox()
                     {/* <label>
                         Email
                     </label> */}
-                    <input placeholder="Login de la team">
+                    <input className={style.inputBox} placeholder="Login de la team">
                     </input>
                 </div>
                 <div>
                     {/* <label>
                         Mot de Passe
                     </label> */}
-                    <input placeholder="Mot de passe">
+                    <input className={style.inputBox} placeholder="Mot de passe">
                     </input>
                 </div>
-                <div>
-                    <button>
+                <div className={style.divBoutonSinscrire}>
+                    <button className={style.boutonSinscrire}>
                         S'inscrire
                     </button>
                 </div>
