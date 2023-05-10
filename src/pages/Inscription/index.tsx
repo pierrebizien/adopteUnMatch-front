@@ -1,7 +1,7 @@
 // import React from "react";
 import NavBarEmpty from "../../components/NavBarEmpty"
 import style from "../styles/connection.module.scss"
-import InscriptionBox from "../../components/Connection/IncriptionBox"
+import InscriptionBox from "../../components/Inscription/IncriptionBox"
 
 function Connection()
 {
@@ -9,7 +9,7 @@ function Connection()
     <>
         <NavBarEmpty />
         <div className={style.flexCenter}>
-                <h1 className={style.connexionTitle}>Connexion</h1>
+                <h1 className={style.connexionTitle}>Créer son Équipe</h1>
             <div className={style.inscriptionBox}>
                 <InscriptionBox />
             </div>
