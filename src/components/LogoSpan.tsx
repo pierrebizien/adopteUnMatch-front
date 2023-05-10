@@ -1,8 +1,8 @@
-import "./styles/logoSpan.css"
+import * as css from './styles/logoSpan.module.scss'
 
 export default function LogoSpan()
 {
     return (
-        <p className="logospan">AdopteUUUUnMatch<span className="dotcom">.com</span></p>
+        <p className={css.logoSpan}>AdopteUnMatch<span className="dotcom">.com</span></p>
     )
 } 

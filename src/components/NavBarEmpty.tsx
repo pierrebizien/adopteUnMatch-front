@@ -1,14 +1,18 @@
 import LogoSpan from "./LogoSpan";
-import "./styles/navBarEmpty.css"
+import "./styles/navBarEmpty.modules.scss"
 
 function NavBarEmpty()
 {
     return (
-    <nav>
-        <div className="navbarempty">
-            <LogoSpan />
+        <>
+        <div className="navbarempty-fake">
         </div>
-    </nav>
+        <div className="navbarempty">
+            <nav>
+                <LogoSpan />
+            </nav>
+        </div>
+        </>
     );
 }
 export default NavBarEmpty
