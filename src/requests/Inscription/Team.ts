@@ -1,15 +1,14 @@
-export async function createTeam()
-{
+import '/mnt/nfs/homes/pbizien/Documents/adoptUnMatch/frontend/src/components/Inscription/Inscription.tools.tsx'
 
-	const login = document.forms['connectionForm']['login'];
-    const mdp = document.forms['connectionForm']['password'];
-    const city = document.forms['connectionForm']['city'];
-    const name = document.forms['connectionForm']['name'];
-    // console.log(login, mdp)
-	if (login.value === "")
-	{
-		console.log("Erreur : login vide");
-	}
+interface TeamInput {
+		loginOutput: string;
+ 	 	nameOutput: string;
+  		mdpOutput: string;
+  		cityOutput: string;
+}
+
+export async function createTeam(input : TeamInput)
+{
     return (await fetch("http://localhost:5175/api/createteam", {
 		method: "post",
 		headers: {
@@ -18,10 +17,10 @@ export async function createTeam()
 		},
 
 		body: JSON.stringify({
-			login: login.value,
-			name: name.value,
-			password: mdp.value,
-			city: city.value
+			login: input.loginOutput,
+			name: input.nameOutput,
+			password: input.mdpOutput,
+			city: input.cityOutput
 		})
 	}))
 

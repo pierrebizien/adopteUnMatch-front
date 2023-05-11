@@ -1,9 +1,9 @@
 import {useState} from "react";
 import NavBarEmpty from "../../components/NavBarEmpty"
 import style from "../styles/inscription.module.scss"
-import InscriptionBox from "../../components/Inscription/IncriptionBox"
+import ConnexionBox from "../../components/Connexion/ConnexionBox";
 
-function Inscription()
+function Connexion()
 {
     const [alertMess, setAlertMess] = useState();
 
@@ -11,9 +11,9 @@ function Inscription()
     <>
         <NavBarEmpty />
         <div className={style.flexCenter} id="contentInscription">
-            <h1 className={style.connexionTitle}>Créer son Équipe</h1>
+            <h1 className={style.connexionTitle}>Connexion</h1>
             <div className={style.inscriptionBox}>
-                <InscriptionBox />
+                <ConnexionBox />
             </div>
             <div id='ancreErrMess'>
             </div>
@@ -21,4 +21,4 @@ function Inscription()
     </>
     )
 }
-export default Inscription
+export default Connexion

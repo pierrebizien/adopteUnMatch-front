@@ -32,13 +32,14 @@ input::placeholder {
 }
 input{
     padding:2vw 2vw 2vw 1vw;
+    font-size: 2vw;
 	display: flex;
 	align-items: center;
 	// margin-top: 5%;
     // margin-bottom: 10%;
 }
 
-.boutonSinscrire {
+.boutonPrincipal {
     background-color: rgb(255, 94, 0) ;
     border-radius: 0;
     color: white;
@@ -53,10 +54,19 @@ input{
     }
 }
 
-.divBoutonSinscrire {
+.divBoutonPrincipal {
     // width: 100%;
     // height: 100%;
     width: 50%;
     display: flex;
     justify-content: center;
+}
+
+.connexionLink {
+    color:black;
+    cursor: pointer;
+    font-size: 2vw;
+    &:hover {
+        color: rgb(255, 94, 0);
+    }
 }

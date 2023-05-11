@@ -1,7 +1,7 @@
 import style from "../styles/inscriptionBox.module.scss"
 import { createTeam } from "../../requests/Inscription/Team";
-import './Inscription.tools.tsx'
-import { deleteErrorMessage, parseInputInscr, setErrorMessage } from "./Inscription.tools.tsx";
+import './Connexion.tools'
+import { deleteErrorMessage, parseInputCo, setErrorMessage } from "./Connexion.tools";
 
 function manageResponse(res : Response)
 {
@@ -17,6 +17,7 @@ function manageResponse(res : Response)
                 console.log('on doit voir s afficher un message');
                 setErrorMessage(resJSON.message);
             }
+
         }
 	)
 	.catch(e => console.log(e));
@@ -26,9 +27,9 @@ function handleClick(e:Event)
 {
     deleteErrorMessage();
     e.preventDefault();
-    if (parseInputInscr() === 1)
+    if (parseInputCo() === 1)
         return ;
-    const output = parseInputInscr();
+    const output = parseInputCo();
     console.log(output);
 	createTeam(output) // renvoie fetch
 	.then ((res) => manageResponse(res))
@@ -37,7 +38,7 @@ function handleClick(e:Event)
 
 }
 
-function InscriptionBox()
+function ConnexionBox()
 {
     return (
         <form name="connectionForm" className={style.form}>
@@ -49,24 +50,16 @@ function InscriptionBox()
                     <input name="password" type="password" className={style.inputBox} placeholder="Mot de passe">
                     </input>
                 </div>
-                <div  className={style.elemBox}>
-                    <input name="name" className={style.inputBox} placeholder="Nom de la team">
-                    </input>
-                </div>
-                <div  className={style.elemBox}>
-                    <input name="city" className={style.inputBox} placeholder="Ville">
-                    </input>
-                </div>
                 <div className={style.divBoutonPrincipal}>
                     <button className={style.boutonPrincipal} onClick={handleClick}>
-                        S'inscrire
+                        Se connecter
                     </button>
                 </div>
                 <div>
-                    <a href="/Connexion" className={style.connexionLink}>Se connecter</a>
+                    <a href="/" className={style.connexionLink}>S'inscrire</a>
                 </div>
         </form>
     )
 }
 
-export default InscriptionBox
+export default ConnexionBox
