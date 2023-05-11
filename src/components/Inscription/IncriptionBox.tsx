@@ -1,31 +1,21 @@
 import style from "../styles/inscriptionBox.module.scss"
+import { createTeam } from "../../requests/Inscription/Team";
+
+function manageResponse(res : Response)
+{
+	res.json()
+	.then(message =>
+		console.log(message.err_message)
+	)
+	.catch(e => console.log(e));
+}
 
 function handleClick(e:Event)
 {
     e.preventDefault();
-    const login = document.forms['connectionForm']['login'];
-    const mdp = document.forms['connectionForm']['password'];
-    const city = document.forms['connectionForm']['city'];
-    const name = document.forms['connectionForm']['name'];
-    // console.log(login, mdp)
-    fetch("http://localhost:5175/api/stuff", {
-     method: "post",
-     headers: {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json'
-  },
-
-  //make sure to serialize your JSON body
-  body: JSON.stringify({
-    login: login.value,
-    name: name.value,
-    password: mdp.value,
-    city: city.value
-  })
-})
-.then ((res) => console.log(res))
-.catch((error) => console.log(error));
-
+	createTeam()
+	.then ((res) => manageResponse(res))
+	.catch((err) => console.log(err.error_code));
     document.forms['connectionForm'].reset();
 
 }
@@ -34,20 +24,19 @@ function InscriptionBox()
 {
     return (
         <form name="connectionForm" className={style.form}>
-            <div className={style.elemBox}>
-                <div>
+                <div className={style.elemBox}>
                     <input name="login" className={style.inputBox} placeholder="Login de la team">
                     </input>
                 </div>
-                <div>
+                <div  className={style.elemBox}>
                     <input name="password" type="password" className={style.inputBox} placeholder="Mot de passe">
                     </input>
                 </div>
-                <div>
+                <div  className={style.elemBox}>
                     <input name="name" className={style.inputBox} placeholder="Nom de la team">
                     </input>
                 </div>
-                <div>
+                <div  className={style.elemBox}>
                     <input name="city" className={style.inputBox} placeholder="Ville">
                     </input>
                 </div>
@@ -56,7 +45,6 @@ function InscriptionBox()
                         S'inscrire
                     </button>
                 </div>
-            </div>
         </form>
     )
 }

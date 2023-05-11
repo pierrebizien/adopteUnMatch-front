@@ -1,6 +1,6 @@
 // import React from "react";
 import NavBarEmpty from "../../components/NavBarEmpty"
-import style from "../styles/connection.module.scss"
+import style from "../styles/inscription.module.scss"
 import InscriptionBox from "../../components/Inscription/IncriptionBox"
 
 function Connection()
