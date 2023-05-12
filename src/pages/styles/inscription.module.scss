@@ -2,8 +2,11 @@
 
 .inscriptionBox {
     background-color: rgb(233, 233, 233);
-    width: 50vw;
-    height: 50vh;
+    width: 40vw;
+	aspect-ratio: 3/2;
+	border-left: 0.7vw solid rgb(255, 94, 0);
+	padding: 2vw;
+	display: flex;
 }
 
 .flexCenter{
@@ -21,4 +24,10 @@
     font-size: 5vw;
     margin: 5vw;
 
+}
+
+h2 {
+    color:rgb(180, 174, 174);
+    font-family: 'Poppins', sans-serif;
+    font-size: 3vw;
 }
