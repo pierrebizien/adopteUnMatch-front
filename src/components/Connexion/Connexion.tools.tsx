@@ -13,7 +13,7 @@ export function deleteErrorMessage() : void
 
 interface TeamInput {
 	loginOutput: string;
-	  mdpOutput: string;
+	mdpOutput: string;
 }
 
 export function parseInputCo() : TeamInput
