@@ -1,22 +1,27 @@
 import { getTeamName } from "../../requests/Global/global"
+import { useState } from "react";
 
-
-function getname()
-{
-    getTeamName()
-    .then(name => {
-    return name;
-    })
-    .catch(e => {return null})
-}
 function MatchFinder()
 {
-    
-   const name = getname();
-    console.log(name);
+    const [nameTeam, setName] = useState('Loading...');
+
+    function getname()
+    {
+        getTeamName()
+        .then(resJSON => {
+            console.log('hey', resJSON.name)
+            setName(resJSON.name);
+        })
+        .catch(() => {
+            console.log('erreur de json')
+            return null
+        })
+    }
+   
+    getname();
     return (
         <div>
-            <h1>{'Match Finder' + {name}}</h1>
+            <h1>Hello {nameTeam}</h1>
         </div>
     )
 }

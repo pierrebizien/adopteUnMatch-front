@@ -1,4 +1,3 @@
-import {useState} from "react";
 import NavBarEmpty from "../../components/NavBarEmpty"
 import style from "../styles/inscription.module.scss"
 import ConnexionBox from "../../components/Connexion/ConnexionBox";
@@ -6,7 +5,6 @@ import { VerifToken } from "../ProtectionPages/ProtectedPages.tools";
 
 function Connexion()
 {
-    const [alertMess, setAlertMess] = useState();
     VerifToken();
     return (
     <>

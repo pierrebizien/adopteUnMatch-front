@@ -19,18 +19,17 @@ function manageResponse(res : Response)
 	.catch(e => console.log(e));
 }
 
-function handleClick(e:Event)
+function handleClick(e:React.MouseEvent<HTMLButtonElement>)
 {
     deleteErrorMessage();
     e.preventDefault();
-    if (parseInputInscr() === 1)
+    if (parseInputInscr().loginOutput === "" || parseInputInscr().mdpOutput === "")
         return ;
     const output = parseInputInscr();
-    console.log(output);
 	createTeam(output) // renvoie fetch
 	.then ((res) => manageResponse(res))
 	.catch((err) => console.log(err));
-    document.forms['connectionForm'].reset();
+    document.forms.namedItem('connectionForm')?.reset();
 
 }
 

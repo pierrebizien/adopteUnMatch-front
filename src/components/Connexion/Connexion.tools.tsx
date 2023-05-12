@@ -11,19 +11,24 @@ export function deleteErrorMessage() : void
     document.querySelector('.errorMessageInscription')?.remove();
 }
 
-export function parseInputCo() : Number | Object
+interface TeamInput {
+	loginOutput: string;
+	  mdpOutput: string;
+}
+
+export function parseInputCo() : TeamInput
 {
 	const login = document.forms.namedItem('connectionForm')?.querySelector<HTMLInputElement>('[name="login"]');
 	const mdp = document.forms.namedItem('connectionForm')?.querySelector<HTMLInputElement>('[name="password"]');
 	if (!login || login.value === "")
 	{
 		setErrorMessage("Veuillez renseigner un login");
-		return 1;
+		return ({loginOutput: "", mdpOutput: ""})
 	}
 	else if (!mdp || mdp.value === "")
 	{
 		setErrorMessage("Veuillez renseigner un mot de passe")
-		return 1;
+		return ({loginOutput: "", mdpOutput: ""})
 	}
     return ({loginOutput: login.value, mdpOutput: mdp.value})
 }

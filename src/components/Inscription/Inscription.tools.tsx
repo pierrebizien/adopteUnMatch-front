@@ -1,4 +1,3 @@
-import ReactDOM from "react-dom";
 
 export function setErrorMessage(error_message : string) : void
 {
@@ -13,31 +12,38 @@ export function deleteErrorMessage() : void
     document.querySelector('.errorMessageInscription')?.remove();
 }
 
-export function parseInputInscr() : Number | Object
+interface TeamInput {
+	loginOutput: string;
+	  nameOutput: string;
+	  mdpOutput: string;
+	  cityOutput: string;
+}
+
+export function parseInputInscr() : TeamInput
 {
-    const login = document.forms['connectionForm']['login'];
-    const mdp = document.forms['connectionForm']['password'];
-    const city = document.forms['connectionForm']['city'];
-    const name = document.forms['connectionForm']['name'];
-	if (login.value === "")
+	const login = document.forms.namedItem('connectionForm')?.querySelector<HTMLInputElement>('[name="login"]');
+	const mdp = document.forms.namedItem('connectionForm')?.querySelector<HTMLInputElement>('[name="password"]');
+	const city = document.forms.namedItem('connectionForm')?.querySelector<HTMLInputElement>('[name="city"]');
+	const name = document.forms.namedItem('connectionForm')?.querySelector<HTMLInputElement>('[name="name"]');
+	if (!login || login.value === "")
 	{
 		setErrorMessage("Veuillez renseigner un login");
-		return 1;
+		return {loginOutput: "", mdpOutput: "", cityOutput: "", nameOutput: ""}	
 	}
-	else if (mdp.value === "")
+	else if (!mdp || mdp.value === "")
 	{
 		setErrorMessage("Veuillez renseigner un mot de passe")
-		return 1;
+		return {loginOutput: "", mdpOutput: "", cityOutput: "", nameOutput: ""}	
 	}
-	else if  (name.value === "")
+	else if  (!name || name.value === "")
 	{
 		setErrorMessage("Veuillez renseigner un nom d'equipe")
-		return 1;
+		return {loginOutput: "", mdpOutput: "", cityOutput: "", nameOutput: ""}	
 	}
-	else if (city.value === "")
+	else if (!city || city.value === "")
 	{
 		setErrorMessage("Veuillez renseigner une ville")
-		return 1;
+		return {loginOutput: "", mdpOutput: "", cityOutput: "", nameOutput: ""}	
 	}
     return ({loginOutput: login.value, mdpOutput: mdp.value, cityOutput: city.value, nameOutput: name.value})
 }

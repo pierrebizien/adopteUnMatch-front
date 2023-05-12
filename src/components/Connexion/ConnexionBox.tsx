@@ -3,14 +3,13 @@ import { sendCreds } from "../../requests/connexion/auth";
 import './Connexion.tools'
 import { deleteErrorMessage, parseInputCo, manageResponseLogin } from "./Connexion.tools";
 
-function handleClick(e:Event)
+function handleClick(e: React.MouseEvent<HTMLButtonElement>)
 {
     deleteErrorMessage();
     e.preventDefault();
-    if (parseInputCo() === 1)
+    if (parseInputCo().loginOutput === "" || parseInputCo().mdpOutput === "")
         return ;
     const output = parseInputCo();
-    console.log(output);
 	sendCreds(output) // renvoie fetch
 	.then ((res) => res.json().then(resJSON => manageResponseLogin(resJSON)))
 	.catch((err) => console.log(err));
@@ -20,8 +19,6 @@ function handleClick(e:Event)
 
 function ConnexionBox()
 {
-	
-
     return (
         <form name="connectionForm" className={style.form}>
                 <div className={style.elemBox}>

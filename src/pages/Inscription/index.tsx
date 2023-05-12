@@ -1,12 +1,9 @@
-import {useState} from "react";
 import NavBarEmpty from "../../components/NavBarEmpty"
 import style from "../styles/inscription.module.scss"
 import InscriptionBox from "../../components/Inscription/IncriptionBox"
 
 function Inscription()
 {
-    const [alertMess, setAlertMess] = useState();
-
     return (
     <>
         <NavBarEmpty />
