@@ -1,5 +1,5 @@
 import style from "../styles/inscriptionBox.module.scss"
-import { createTeam } from "../../requests/Inscription/Team";
+import { sendCreds } from "../../requests/connexion/auth";
 import './Connexion.tools'
 import { deleteErrorMessage, parseInputCo, setErrorMessage } from "./Connexion.tools";
 
@@ -9,10 +9,7 @@ function manageResponse(res : Response)
 	res.json()
 	.then(resJSON =>
         {
-            if(resJSON.code === 0)
-            {
-            }
-            else 
+            if(resJSON.code !== 0)
             {
                 console.log('on doit voir s afficher un message');
                 setErrorMessage(resJSON.message);
@@ -31,8 +28,8 @@ function handleClick(e:Event)
         return ;
     const output = parseInputCo();
     console.log(output);
-	createTeam(output) // renvoie fetch
-	.then ((res) => manageResponse(res))
+	sendCreds(output) // renvoie fetch
+	.then ((res) => console.log(res))
 	.catch((err) => console.log(err));
     document.forms['connectionForm'].reset();
 
@@ -40,6 +37,8 @@ function handleClick(e:Event)
 
 function ConnexionBox()
 {
+	
+
     return (
         <form name="connectionForm" className={style.form}>
                 <div className={style.elemBox}>

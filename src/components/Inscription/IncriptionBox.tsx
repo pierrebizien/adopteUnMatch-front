@@ -1,5 +1,5 @@
 import style from "../styles/inscriptionBox.module.scss"
-import { createTeam } from "../../requests/Inscription/Team";
+import { createTeam } from "../../requests/inscription/team.ts";
 import './Inscription.tools.tsx'
 import { deleteErrorMessage, parseInputInscr, setErrorMessage } from "./Inscription.tools.tsx";
 
@@ -9,10 +9,7 @@ function manageResponse(res : Response)
 	res.json()
 	.then(resJSON =>
         {
-            if(resJSON.code === 0)
-            {
-            }
-            else 
+            if(resJSON.code !== 0)
             {
                 console.log('on doit voir s afficher un message');
                 setErrorMessage(resJSON.message);
