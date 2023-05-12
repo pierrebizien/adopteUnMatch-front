@@ -1,24 +1,7 @@
 import style from "../styles/inscriptionBox.module.scss"
 import { sendCreds } from "../../requests/connexion/auth";
 import './Connexion.tools'
-import { deleteErrorMessage, parseInputCo, setErrorMessage } from "./Connexion.tools";
-
-function manageResponse(res : Response)
-{
-    console.log('test 3', res);
-	res.json()
-	.then(resJSON =>
-        {
-            if(resJSON.code !== 0)
-            {
-                console.log('on doit voir s afficher un message');
-                setErrorMessage(resJSON.message);
-            }
-
-        }
-	)
-	.catch(e => console.log(e));
-}
+import { deleteErrorMessage, parseInputCo, manageResponseLogin } from "./Connexion.tools";
 
 function handleClick(e:Event)
 {
@@ -29,9 +12,9 @@ function handleClick(e:Event)
     const output = parseInputCo();
     console.log(output);
 	sendCreds(output) // renvoie fetch
-	.then ((res) => console.log(res))
+	.then ((res) => res.json().then(resJSON => manageResponseLogin(resJSON)))
 	.catch((err) => console.log(err));
-    document.forms['connectionForm'].reset();
+    document.forms.namedItem('connectionForm')?.reset();
 
 }
 

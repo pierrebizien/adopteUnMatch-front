@@ -1,5 +1,3 @@
-import ReactDOM from "react-dom";
-
 export function setErrorMessage(error_message : string) : void
 {
     const tmp = document.createElement('h2');
@@ -15,17 +13,40 @@ export function deleteErrorMessage() : void
 
 export function parseInputCo() : Number | Object
 {
-    const login = document.forms['connectionForm']['login'];
-    const mdp = document.forms['connectionForm']['password'];
-	if (login.value === "")
+	const login = document.forms.namedItem('connectionForm')?.querySelector<HTMLInputElement>('[name="login"]');
+	const mdp = document.forms.namedItem('connectionForm')?.querySelector<HTMLInputElement>('[name="password"]');
+	if (!login || login.value === "")
 	{
 		setErrorMessage("Veuillez renseigner un login");
 		return 1;
 	}
-	else if (mdp.value === "")
+	else if (!mdp || mdp.value === "")
 	{
 		setErrorMessage("Veuillez renseigner un mot de passe")
 		return 1;
 	}
     return ({loginOutput: login.value, mdpOutput: mdp.value})
+}
+
+interface responseLoginJSON {
+
+		error_code: number,
+		message: string,
+		userId: string,
+		token: string
+}
+
+export function manageResponseLogin(resJSON : responseLoginJSON)
+{
+	if (resJSON.error_code === 1)
+	{
+		setErrorMessage('Credentials incorrects')
+	}
+	else
+	{
+		
+		localStorage.setItem('token', resJSON.token);
+		localStorage.setItem('userId', resJSON.userId);
+		window.location.href = "/MatchFinder"
+	}
 }

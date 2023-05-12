@@ -1,5 +1,5 @@
 import style from "../styles/inscriptionBox.module.scss"
-import { createTeam } from "../../requests/inscription/team.ts";
+import { createTeam } from "../../requests/Inscription/Team.ts"
 import './Inscription.tools.tsx'
 import { deleteErrorMessage, parseInputInscr, setErrorMessage } from "./Inscription.tools.tsx";
 
