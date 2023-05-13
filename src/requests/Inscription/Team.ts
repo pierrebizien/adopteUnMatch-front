@@ -1,13 +1,13 @@
 import '../../components/Inscription/Inscription.tools.tsx'
 
-interface TeamInput {
-		loginOutput: string;
- 	 	nameOutput: string;
-  		mdpOutput: string;
-  		cityOutput: string;
-}
+type Inputs = {
+    login  : string,
+    password: string,
+    name: string,
+    city: string
+  };
 
-export async function createTeam(input : TeamInput)
+export async function createTeam(input : Inputs)
 {
     return (await fetch("http://localhost:5175/api/createteam", {
 		method: "post",
@@ -17,10 +17,10 @@ export async function createTeam(input : TeamInput)
 		},
 
 		body: JSON.stringify({
-			login: input.loginOutput,
-			name: input.nameOutput,
-			password: input.mdpOutput,
-			city: input.cityOutput
+			login: input.login,
+			name: input.name,
+			password: input.password,
+			city: input.city
 		})
 	}))
 

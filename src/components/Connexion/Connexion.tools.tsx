@@ -41,11 +41,11 @@ interface responseLoginJSON {
 		token: string
 }
 
-export function manageResponseLogin(resJSON : responseLoginJSON)
+export function manageResponseLogin(resJSON : responseLoginJSON, setIncorrectCreds : React.Dispatch<React.SetStateAction<boolean>>)
 {
 	if (resJSON.error_code === 1)
 	{
-		setErrorMessage('Credentials incorrects')
+		setIncorrectCreds(true);
 	}
 	else
 	{

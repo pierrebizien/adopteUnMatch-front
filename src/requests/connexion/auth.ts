@@ -1,8 +1,8 @@
 import '../../components/Inscription/Inscription.tools.tsx'
 
 interface TeamInput {
-		loginOutput: string;
-  		mdpOutput: string;
+		login: string;
+  		password: string;
 }
 
 export async function sendCreds(input : TeamInput)
@@ -15,8 +15,8 @@ export async function sendCreds(input : TeamInput)
 		},
 
 		body: JSON.stringify({
-			login: input.loginOutput,
-			password: input.mdpOutput,
+			login: input.login,
+			password: input.password,
 		})
 	}))
 }

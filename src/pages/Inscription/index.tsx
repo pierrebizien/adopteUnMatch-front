@@ -1,6 +1,6 @@
 import NavBarEmpty from "../../components/NavBarEmpty"
 import style from "../styles/inscription.module.scss"
-import InscriptionBox from "../../components/Inscription/IncriptionBox"
+import InscriptionBox from "../../components/Inscription/IncriptionBox-RHF"
 
 function Inscription()
 {

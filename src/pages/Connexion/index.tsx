@@ -1,6 +1,6 @@
 import NavBarEmpty from "../../components/NavBarEmpty"
 import style from "../styles/inscription.module.scss"
-import ConnexionBox from "../../components/Connexion/ConnexionBox";
+import ConnexionBox from "../../components/Connexion/ConnexionBox-RHF";
 import { VerifToken } from "../ProtectionPages/ProtectedPages.tools";
 
 function Connexion()

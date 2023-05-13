@@ -5,12 +5,13 @@
 	width: 80%;
 	display: flex;
 	margin-bottom: 3%;
+    flex-direction: column;
+    // justify-content: space-between;
 
 }
 
 .inputBox {
     border:0.1vw solid rgb(255, 106, 0);
-	width: 100%;
 }
 
 .form {
@@ -69,4 +70,24 @@ input{
     &:hover {
         color: rgb(255, 94, 0);
     }
+}
+
+.error_message_form {
+    color :rgb(254, 80, 0);
+    font-family: 'arial';
+    margin: 3% 0;
+    font-size: 1.7vw;
+
+}
+
+.selectList{
+    padding:2vw 2vw 2vw 1vw;
+	display: flex;
+	align-items: center;
+    font-size: 2vw;
+    font-family: 'poppins';
+    width: 100%;
+    border: 0.1vw solid rgb(255, 106, 0);
+    background-color: white;
+    
 }
