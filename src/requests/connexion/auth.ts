@@ -1,13 +1,14 @@
 import '../../components/Inscription/Inscription.tools.tsx'
 
+
 interface TeamInput {
-		loginOutput: string;
-  		mdpOutput: string;
+		login: string;
+  		password: string;
 }
 
 export async function sendCreds(input : TeamInput)
 {
-    return (await fetch("http://localhost:5175/api/login", {
+    return (await fetch(`${import.meta.env.VITE_BACK_PATH}/api/login`, {
 		method: "post",
 		headers: {
 		'Accept': 'application/json',
@@ -15,8 +16,8 @@ export async function sendCreds(input : TeamInput)
 		},
 
 		body: JSON.stringify({
-			login: input.loginOutput,
-			password: input.mdpOutput,
+			login: input.login,
+			password: input.password,
 		})
 	}))
 }
