@@ -1,7 +1,6 @@
 import style from "../styles/inscriptionBox.module.scss"
 import { createTeam } from "../../requests/Inscription/Team"
 import './Inscription.tools'
-import { deleteErrorMessage, parseInputInscr, setErrorMessage } from "./Inscription.tools";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useState } from "react";
 
