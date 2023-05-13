@@ -109,7 +109,6 @@ function InscriptionBox()
                     required: "Champs requis"})} 
                         id="cities" placeholder="Ville"
                         className={style.selectList}>
-                        <option value="" disabled selected>Ville</option>
                         <option value="Paris">Paris</option>
                         <option value="Lyon">Lyon</option>
                         <option value="Le Havre">Le Havre</option>

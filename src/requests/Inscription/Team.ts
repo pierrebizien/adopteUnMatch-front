@@ -9,7 +9,7 @@ type Inputs = {
 
 export async function createTeam(input : Inputs)
 {
-    return (await fetch("http://localhost:5175/api/createteam", {
+    return (await fetch(`${import.meta.env.VITE_BACK_PATH}/api/createteam`, {
 		method: "post",
 		headers: {
 		'Accept': 'application/json',

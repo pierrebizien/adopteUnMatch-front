@@ -1,5 +1,6 @@
 import '../../components/Inscription/Inscription.tools.tsx'
 
+
 interface TeamInput {
 		login: string;
   		password: string;
@@ -7,7 +8,7 @@ interface TeamInput {
 
 export async function sendCreds(input : TeamInput)
 {
-    return (await fetch("http://localhost:5175/api/login", {
+    return (await fetch(`${import.meta.env.VITE_BACK_PATH}/api/login`, {
 		method: "post",
 		headers: {
 		'Accept': 'application/json',
