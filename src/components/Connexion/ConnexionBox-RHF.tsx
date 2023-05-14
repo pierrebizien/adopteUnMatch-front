@@ -12,11 +12,12 @@ type Inputs = {
 
 function ConnexionBox()
 {
-    const {register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
+    const {register, handleSubmit, watch, formState: { errors }, reset } = useForm<Inputs>();
     const [incorrectCreds, setIncorrectCreds] = useState(false);
     
     function handleClick(data: Inputs)
     {
+      reset();
       sendCreds(data) // renvoie fetch
       .then ((res) => res.json().then(resJSON => manageResponseLogin(resJSON, setIncorrectCreds)))
       .catch((err) => console.log(err));

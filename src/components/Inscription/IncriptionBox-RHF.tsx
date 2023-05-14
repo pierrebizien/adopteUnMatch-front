@@ -6,7 +6,6 @@ import { useState } from "react";
 
 function manageResponse(res : Response, setmessageErrServeur:  React.Dispatch<React.SetStateAction<string>>)
 {
-    console.log('test 3', res);
 	res.json()
 	.then(resJSON =>
         {
@@ -19,19 +18,6 @@ function manageResponse(res : Response, setmessageErrServeur:  React.Dispatch<Re
 	.catch(e => console.log(e));
 }
 
-// function handleClick(e:React.MouseEvent<HTMLButtonElement>)
-// {
-//     deleteErrorMessage();
-//     e.preventDefault();
-//     if (parseInputInscr().loginOutput === "" || parseInputInscr().mdpOutput === "")
-//         return ;
-//     const output = parseInputInscr();
-// 	createTeam(output) // renvoie fetch
-// 	.then ((res) => manageResponse(res))
-// 	.catch((err) => console.log(err));
-//     document.forms.namedItem('connectionForm')?.reset();
-
-// }
 type Inputs = {
     login  : string,
     password: string,
@@ -41,11 +27,12 @@ type Inputs = {
 
 function InscriptionBox()
 {
-    const {register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
+    const {register, handleSubmit, watch, formState: { errors }, reset } = useForm<Inputs>();
     const [messageErrServeur, setmessageErrServeur] = useState("");
     
     function handleClick(data: Inputs)
     {
+        reset();
         createTeam(data) // renvoie fetch
         .then ((res) => manageResponse(res, setmessageErrServeur))
         .catch((err) => console.log(err));

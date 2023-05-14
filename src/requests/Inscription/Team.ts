@@ -10,7 +10,7 @@ type Inputs = {
 export async function createTeam(input : Inputs)
 {
 	console.log(`${import.meta.env.VITE_BACK_PATH}/api/createteam`);
-    return (await fetch(`${import.meta.env.VITE_BACK_PATH}/api/createteam`, {
+    return (await fetch(`${import.meta.env.VITE_BACK_PATH}/api/signup`, {
 		method: "post",
 		headers: {
 		'Accept': 'application/json',
