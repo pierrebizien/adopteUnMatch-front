@@ -1,6 +1,6 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import style from "../styles/inscriptionBox.module.scss";
-import { sendCreds } from "../../requests/connexion/auth";
+import { sendCreds } from "../../requests/Connexion/auth";
 import { manageResponseLogin } from "./Connexion.tools";
 import { useState } from "react";
 

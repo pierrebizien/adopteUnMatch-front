@@ -1,5 +1,7 @@
 import LogoSpan from "../LogoSpan"; 
-import "../styles/navBarEmpty.modules.scss"
+import style from "../styles/navBar.module.scss"
+// import style from "../styles/inscriptionBox.module.scss";
+import ButtonNavBar from './ButtonNavbar'
 
 function NavBar()
 {
@@ -7,11 +9,16 @@ function NavBar()
 		<>
 			<div className="navbarempty-fake">
 			</div>
-			<div className="navbarempty">
-				<nav>
+				<nav className={style.navBar}>
+					<div className={style.logo}>
 					<LogoSpan />
+					</div>
+					<ul className={style.buttons}>
+						<ButtonNavBar text="Match Creator" link="/MatchCreator"/>
+						<ButtonNavBar text="Match Finder" link="/MatchFinder"/>
+						<ButtonNavBar text="Manage Team" link="/ManageTeam"/>
+					</ul>
 				</nav>
-			</div>
 		</>
 	) ;
 }

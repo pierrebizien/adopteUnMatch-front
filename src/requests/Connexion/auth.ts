@@ -1,4 +1,4 @@
-import '../../components/Inscription/Inscription.tools.tsx'
+import '../../components/Inscription/Inscription.tools.js'
 
 
 interface TeamInput {
