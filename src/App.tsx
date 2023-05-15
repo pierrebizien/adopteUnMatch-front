@@ -6,6 +6,7 @@ import './App.css'
 import Inscription from './pages/Inscription/index.js'
 import Connexion from './pages/Connexion/index.js'
 import ProtectedAccess from './pages/ProtectionPages/ProtectedAccess.tsx'
+import MatchCreator from './pages/MatchCreator/MatchCreator.tsx'
 
 function App() {
  
@@ -19,6 +20,12 @@ function App() {
           <ProtectedAccess>
             <MatchFinder />
           </ProtectedAccess>
+          }>
+          </Route>
+          <Route path="/MatchCreator" element={
+        //   <ProtectedAccess>
+            <MatchCreator />
+        //   </ProtectedAccess>
           }>
           </Route>
           <Route path="/TeamManager" element={<TeamManager />}></Route>

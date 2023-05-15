@@ -14,9 +14,9 @@ export function deleteErrorMessage() : void
 
 interface TeamInput {
 	loginOutput: string;
-	  nameOutput: string;
-	  mdpOutput: string;
-	  cityOutput: string;
+	nameOutput: string;
+	mdpOutput: string;
+	cityOutput: string;
 }
 
 export function parseInputInscr() : TeamInput

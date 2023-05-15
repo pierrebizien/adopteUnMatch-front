@@ -1,4 +1,4 @@
-import NavBarEmpty from "../../components/NavBarEmpty"
+import NavBarEmpty from "../../components/NavBars/NavBarEmpty"
 import style from "../styles/inscription.module.scss"
 import InscriptionBox from "../../components/Inscription/IncriptionBox-RHF"
 
