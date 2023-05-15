@@ -10,11 +10,23 @@ import { it, describe, expect } from "vitest";
 expect.extend(matchers);
 
 describe("Page Connexion", () => {
-  it("should display an error message when password empty", async () => {
+  it("should display an error if credentials are incorrects", async () => {
     render(<Connexion />);
     await userEvent.type(screen.getByLabelText("login"), "toto");
-	
-    expect(screen.getByText("Se connecter")).toBeInTheDocument();
+    await userEvent.click(screen.getByText("Se connecter"))
+    
+    expect(screen.getByText("Champs requis")).toBeInTheDocument();
+  });
+
+  it("should display an error message when password empty", async () => {
+    // render(<Connexion />);
+    // await userEvent.type(screen.getByLabelText("Password"), "toto");
+    // await userEvent.keyboard(screen.getByLabelText("login"), "");
+   
+    await userEvent.click(screen.getByText("Se connecter"))
+    
+    //completer
+    expect(screen.getByText("Champs requis")).toBeInTheDocument();
   });
 });
 

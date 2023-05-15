@@ -1,4 +1,4 @@
-import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
+import { useQuery } from 'react-query'
 import { getTeamName } from "../../requests/Global/global"
 
 
@@ -9,7 +9,6 @@ function Matchs()
     
     if (isLoading)
     {
-        console.log("HEHFEHFHEFHE")
         return (<h1>LOADING</h1>)
     }
     else if (error)
