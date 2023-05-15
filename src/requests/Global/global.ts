@@ -2,7 +2,7 @@
 
 export async function getTeamName(): Promise<any> {
     try {
-      const response = await fetch(`${import.meta.env.VITE_BACK_PATH}/api/global/getname`, {
+      const response = await fetch(`${import.meta.env.VITE_BACK_PATH}/api/globaldata/getname`, {
         method: 'get',
         headers: {
           'Accept': 'application/json',
