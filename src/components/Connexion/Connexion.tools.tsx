@@ -52,6 +52,6 @@ export function manageResponseLogin(resJSON : responseLoginJSON, setIncorrectCre
 		
 		localStorage.setItem('token', resJSON.token);
 		localStorage.setItem('userId', resJSON.userId);
-		window.location.href = "/MatchFinder"
+		window.location.href = "/MatchCreator"
 	}
 }

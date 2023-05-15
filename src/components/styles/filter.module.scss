@@ -1,0 +1,16 @@
+.checkboxDiv
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'poppins', sans-serif;
+}
+
+.inputFilter:checked:after{
+    background-color: rgb(255, 0, 0);
+}
+
+.labelFilter {
+    font-size: 2vmin;
+    
+}

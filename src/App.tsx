@@ -6,11 +6,16 @@ import './App.css'
 import Inscription from './pages/Inscription/index.js'
 import Connexion from './pages/Connexion/index.js'
 import ProtectedAccess from './pages/ProtectionPages/ProtectedAccess.tsx'
+import MatchCreator from './pages/MatchCreator/MatchCreator.tsx'
+import { QueryClient, QueryClientProvider } from 'react-query'
+
+const queryClient = new QueryClient();
 
 function App() {
  
   return (
     <>
+    <QueryClientProvider client={queryClient}>
       <Router>
         <Routes>
           <Route index element={<Inscription />}></Route>
@@ -21,10 +26,17 @@ function App() {
           </ProtectedAccess>
           }>
           </Route>
+          <Route path="/MatchCreator" element={
+          <ProtectedAccess>
+            <MatchCreator />
+          </ProtectedAccess>
+          }>
+          </Route>
           <Route path="/TeamManager" element={<TeamManager />}></Route>
           <Route path="*" element={<WrongURL />}></Route>
         </Routes>
       </Router>
+    </QueryClientProvider>
     </>
   )
 }

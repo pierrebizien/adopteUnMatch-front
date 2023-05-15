@@ -1,0 +1,28 @@
+.filters {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.filterBox {
+    width: 90%;
+    background-color: rgb(230, 229, 229);;
+    height: 7vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 2vh;
+    padding: 1%;
+    box-shadow: 10px 10px 114px -46px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 114px -46px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 114px -46px rgba(0,0,0,0.75);
+}
+
+
+.filterTitle {
+    font-family: 'poppins', sans-serif;
+    font-style: italic;
+    font-size : 2vmin;
+    margin: 0;
+}

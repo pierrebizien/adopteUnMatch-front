@@ -1,9 +1,9 @@
-import '../../components/Inscription/Inscription.tools.tsx'
+import '../../components/Inscription/Inscription.tools.js'
 
 
 interface TeamInput {
-		login: string;
-  		password: string;
+	login: string;
+	password: string;
 }
 
 export async function sendCreds(input : TeamInput)

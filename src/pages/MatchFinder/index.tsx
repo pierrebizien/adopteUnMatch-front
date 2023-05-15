@@ -1,28 +1,19 @@
-import { getTeamName } from "../../requests/Global/global"
-import { useState } from "react";
+import FilterBox from "../../components/MatchFinder/FilterBox";
+import NavBar from "../../components/NavBars/NavBar";
+import style from '../styles/matchFinder.module.scss';
+import Matchs from "../../components/MatchFinder/Matchs";
 
 function MatchFinder()
 {
-    const [nameTeam, setName] = useState('Loading...');
 
-    function getname()
-    {
-        getTeamName()
-        .then(resJSON => {
-            console.log('hey', resJSON.name)
-            setName(resJSON.name);
-        })
-        .catch(() => {
-            console.log('erreur de json')
-            return null
-        })
-    }
-   
-    getname();
     return (
-        <div>
-            <h1>Hello {nameTeam}</h1>
-        </div>
+        <>
+            <div className={style.bodyPage}>
+                <NavBar />
+                <FilterBox />
+                <Matchs />
+            </div>
+        </>
     )
 }
 export default MatchFinder

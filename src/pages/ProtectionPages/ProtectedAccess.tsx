@@ -4,7 +4,7 @@ import { ReactElement } from 'react';
 
 
 function jwtDecode(t : string) {
-    let token : any = {}
+    const token : any = {}
     token.raw = t;
     token.header = JSON.parse(window.atob(t.split('.')[0]));
     token.payload = JSON.parse(window.atob(t.split('.')[1]));

@@ -1,5 +1,5 @@
-import LogoSpan from "./LogoSpan";
-import "./styles/navBarEmpty.modules.scss"
+import LogoSpan from "../LogoSpan";
+import "../styles/navBarEmpty.modules.scss"
 
 function NavBarEmpty()
 {
