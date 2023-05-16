@@ -1,15 +1,21 @@
 import Filter from "./Filter"
 import styles from "../styles/filterBox.module.scss"
 
-function FilterBox(){
+
+interface FilterBoxProps {
+    changeStatus: (status: number) => void;
+  }
+
+function FilterBox(input : FilterBoxProps){
+    
     return (
     <div className={styles.filterBox}>
         <p className={styles.filterTitle}>Filtres</p>
             <form className={styles.filters}>
-            <Filter text="Tous les matchs" nameGroup="filtres" />
-            <Filter text="Mes matchs" nameGroup="filtres" />
-            <Filter text="Matchs à venir" nameGroup="filtres" />
-            <Filter text="Match terminés" nameGroup="filtres" />
+                <Filter changeStatus={input.changeStatus} text="Tous les matchs" nameGroup="filtres" checkedBool={true} code={0}/>
+                <Filter changeStatus={input.changeStatus} text="Mes matchs" nameGroup="filtres" checkedBool={false} code={1}/>
+                <Filter changeStatus={input.changeStatus} text="Matchs à venir" nameGroup="filtres" checkedBool={false} code={2}/>
+                <Filter changeStatus={input.changeStatus} text="Match terminés" nameGroup="filtres" checkedBool={false} code={3}/>
             </form>
     </div>
     )

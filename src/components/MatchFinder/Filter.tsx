@@ -1,17 +1,24 @@
 import style from '../styles/filter.module.scss'
+import {useState} from 'react'
 
 interface Input 
 {
     text : string,
-    nameGroup : string
+    code : number,
+    nameGroup : string,
+    checkedBool : boolean
+    changeStatus : (status: number) => void;    
 }
 
 function Filter(input : Input)
 {
+    function handleChange() {
+        input.changeStatus(input.code);
+    }
     return (
         <>
             <div className={style.checkboxDiv}>
-                <input className={style.inputFilter} id={`checkbox${input.text}`} type="radio" name={input.nameGroup}/>
+                <input onChange={handleChange} className={style.inputFilter} id={`checkbox${input.text}`} type="radio" name={input.nameGroup} />
                 <label className={style.labelFilter} htmlFor={`checkbox${input.text}`} >{input.text}</label>
             </div>
         </>
@@ -19,3 +26,5 @@ function Filter(input : Input)
 }
 
 export default Filter
+
+// checked={input.checkedBool ? true : false }
