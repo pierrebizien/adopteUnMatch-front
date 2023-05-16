@@ -1,0 +1,19 @@
+.closedButton{
+    border-radius: 0;
+    background-color: rgb(197, 197, 197);
+    color: white;
+    font-family: 'poppins';
+    // font-size: 80%;
+    font-style: italic;
+    cursor:default;
+    &:focus{
+        border: none;
+        outline: none;
+    }
+    
+}
+// .divClosedButton {
+//     width: 50%;
+//     display: flex;
+//     justify-content: center;
+// }

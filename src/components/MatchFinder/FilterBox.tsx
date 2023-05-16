@@ -15,7 +15,7 @@ function FilterBox(input : FilterBoxProps){
                 <Filter changeStatus={input.changeStatus} text="Tous les matchs" nameGroup="filtres" checkedBool={true} code={0}/>
                 <Filter changeStatus={input.changeStatus} text="Mes matchs" nameGroup="filtres" checkedBool={false} code={1}/>
                 <Filter changeStatus={input.changeStatus} text="Matchs à venir" nameGroup="filtres" checkedBool={false} code={2}/>
-                <Filter changeStatus={input.changeStatus} text="Match terminés" nameGroup="filtres" checkedBool={false} code={3}/>
+                <Filter changeStatus={input.changeStatus} text="Matchs disponibles" nameGroup="filtres" checkedBool={false} code={3}/>
             </form>
     </div>
     )
