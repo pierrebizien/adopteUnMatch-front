@@ -1,5 +1,3 @@
-import { useMutation } from 'react-query';
-import { joinTeamToMatch } from '../../requests/Global/global';
 import style from '../styles/matchBox.module.scss'
 import ClosedButton from './ClosedButton';
 
