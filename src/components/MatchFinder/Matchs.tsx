@@ -64,7 +64,7 @@ function Matchs(input : Input)
                 <h1 className={style.titleMatch} >Matchs</h1>
                 <hr className={style.hr}/>
                 {/* <MatchBox /> */}
-                {data.map((item:any, index:number) => {
+                {data.map((item:any) => {
                    let nameAway;
                    if (!item.teamAway)
                         nameAway = null;

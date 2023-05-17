@@ -3,7 +3,6 @@ import NavBar from "../../components/NavBars/NavBar";
 import style from '../styles/matchFinder.module.scss';
 import Matchs from "../../components/MatchFinder/Matchs";
 import { useState } from 'react'
-import Pagination from '@mui/material/Pagination';
 
 function MatchFinder()
 {

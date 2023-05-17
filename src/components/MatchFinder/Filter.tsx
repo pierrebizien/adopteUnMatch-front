@@ -1,5 +1,4 @@
 import style from '../styles/filter.module.scss'
-import {useState} from 'react'
 
 interface Input 
 {
