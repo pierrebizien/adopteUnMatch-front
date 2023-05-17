@@ -11,6 +11,10 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@fontsource/roboto": "^4.5.8",
+    "@mui/material": "^5.13.1",
     "@testing-library/jest-dom": "^5.16.5",
     "dotenv": "^16.0.3",
     "jsdom": "^22.0.0",

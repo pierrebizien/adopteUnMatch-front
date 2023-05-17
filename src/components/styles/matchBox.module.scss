@@ -1,0 +1,56 @@
+.box {
+    // background-color: rgb(131, 131, 131);
+    width: 90%;
+    height: 6vh;
+    margin-top: 1.5vh;
+    padding: 2%;
+    border: 0.1vmin solid rgba(151, 151, 151, 0.421);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(243, 242, 242);
+    box-sizing: border-box;
+    box-shadow: 5px 5px 38px -3px rgba(0,0,0,0.69);
+    -webkit-box-shadow: 5px 5px 38px -3px rgba(0,0,0,0.69);
+    -moz-box-shadow: 5px 5px 38px -3px rgba(0,0,0,0.69);
+    
+}
+
+.buttonPrimary {
+    border-radius: 0;
+    background-color: rgb(255, 86, 24);
+    color: white;
+    font-family: 'poppins';
+    // font-size: 80%;
+    font-style: italic;
+    &:hover{
+        background-color: rgb(164, 56, 17);
+        border: none;
+    } 
+}
+.team1 {
+    @extend .textInBox;
+    color: rgb(255, 86, 24);
+    font-size : 2vh;
+}
+
+.vs {
+    @extend .textInBox;
+}
+.team2 {
+    @extend .textInBox;
+    font-size : 2vh;
+
+}
+.date {
+    @extend .textInBox;
+    font-size: 100%;
+    font-style: normal !important;
+}
+
+.textInBox {
+    font-family: 'poppins';
+    font-style: italic;
+}
+
