@@ -1,9 +1,12 @@
 .titleMatch{
-    color: black;
+    color: rgb(255, 255, 255);
     font-family: "poppins", sans-serif;
     font-size: 700;
     font-style: italic;
     margin-top: 2vh;
+}
+.hr {
+  width: 90%;
 }
 
 .loader {
@@ -71,4 +74,11 @@
     50% {
       transform: scale(1.2, 1);
     }
+  }
+
+  .noMatch{
+    color: white;
+    font-family: 'Poppins';
+    font-size: 4vmin;
+    font-style: italic;
   }

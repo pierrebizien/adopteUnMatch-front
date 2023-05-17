@@ -11,6 +11,7 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 
 const queryClient = new QueryClient();
 
+
 function App() {
  
   return (
@@ -32,7 +33,11 @@ function App() {
           </ProtectedAccess>
           }>
           </Route>
-          <Route path="/TeamManager" element={<TeamManager />}></Route>
+          <Route path="/ManageTeam" element={
+            <ProtectedAccess>
+              <TeamManager />
+          </ProtectedAccess>
+              }></Route>
           <Route path="*" element={<WrongURL />}></Route>
         </Routes>
       </Router>

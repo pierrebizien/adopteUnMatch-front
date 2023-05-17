@@ -1,14 +1,17 @@
-import { useQuery } from 'react-query'
+import { useQuery, useQueryClient } from 'react-query'
 import { getMatches, getMyMatches, getFreeMatches, getUpcomingMatches } from "../../requests/Global/global"
 import style from "../styles/matchs.module.scss"
 import MatchBox from './MatchBox';
 import "../styles/matchs.module.scss"
-
+import { joinTeamToMatch } from '../../requests/Global/global';
 
 
 interface Input
 {
     status : number,
+    page : number,
+    setPage: ((status: number) => void),
+    setLastPage: ((status: boolean) => void),
 }
 
 interface Inputs {
@@ -19,16 +22,26 @@ interface Inputs {
     date : string,
     city: string,
     matchId : number,
-    userId : number
+    userId : number,
+    invalidateCallback : (matchId : number)=>void;
     
 }
 
 function Matchs(input : Input)
 {
-    console.log("status vaut", input.status);
     const reqFunction = [getMatches, getMyMatches, getUpcomingMatches, getFreeMatches]
-    const {isLoading, error, data } = useQuery(['fetchTest', input.status], reqFunction[input.status])
+    const {isLoading, error, data } = useQuery(['fetchMatch', input.status, input.page], reqFunction[input.status])
+    const queryClient = useQueryClient();
 
+    function invalidateCallback (matchId : number)
+    {
+        joinTeamToMatch(matchId)
+        .then (() => {
+            queryClient.invalidateQueries(['fetchMatch', input.status])
+        }
+        )
+        .catch(e => console.log(e))
+    }
     if (isLoading)
     {
         return (<div className={style.loader}></div>)
@@ -39,11 +52,17 @@ function Matchs(input : Input)
     }
     else
         console.log(data)
+    console.log(data.length, 'LENGTH');
+    if (data.length < 8)
+        input.setLastPage(true);
+    else
+        input.setLastPage(false);
     if (data.length === 0)
-        return (<p>Pas de Match</p>)
+        return (<p className={style.noMatch}>Pas de Match</p>)
     return (
         <>
-                <h1 className={style.titleMatch}>Matchs</h1>
+                <h1 className={style.titleMatch} >Matchs</h1>
+                <hr className={style.hr}/>
                 {/* <MatchBox /> */}
                 {data.map((item:any, index:number) => {
                    let nameAway;
@@ -59,7 +78,8 @@ function Matchs(input : Input)
                          date : item.date,
                          city: item.city,
                          matchId : item.id,
-                         userId : item.userId
+                         userId : item.userId,
+                         invalidateCallback : invalidateCallback
                     };
                     return (<MatchBox {...datas} />)
                     

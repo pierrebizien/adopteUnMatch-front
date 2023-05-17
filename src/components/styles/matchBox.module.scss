@@ -31,7 +31,8 @@
 }
 .team1 {
     @extend .textInBox;
-    color: rgb(255, 86, 24)
+    color: rgb(255, 86, 24);
+    font-size : 2vh;
 }
 
 .vs {
@@ -39,6 +40,8 @@
 }
 .team2 {
     @extend .textInBox;
+    font-size : 2vh;
+
 }
 .date {
     @extend .textInBox;

@@ -1,3 +1,4 @@
+import { useMutation } from 'react-query';
 import { joinTeamToMatch } from '../../requests/Global/global';
 import style from '../styles/matchBox.module.scss'
 import ClosedButton from './ClosedButton';
@@ -10,14 +11,16 @@ interface Inputs {
     date : string,
     city: string,
     matchId: number,
-    userId: number
+    userId: number,
+    invalidateCallback : (matchId : number) => void
 }
 
 function MatchBox (datas : Inputs) {
-    
-    function handleClick() {
 
-        joinTeamToMatch(datas.matchId);
+    function handleClick() {
+       
+        datas.invalidateCallback(datas.matchId);
+
     }
     const dataFormatted = datas.date.substring(0, datas.date.indexOf('T'));
     let team2;
