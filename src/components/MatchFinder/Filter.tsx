@@ -18,7 +18,7 @@ function Filter(input : Input)
     return (
         <>
             <div className={style.checkboxDiv}>
-                <input onChange={handleChange} className={style.inputFilter} id={`checkbox${input.text}`} type="radio" name={input.nameGroup} />
+                <input onChange={handleChange} className={style.inputFilter} id={`checkbox${input.text}`} type="radio" name={input.nameGroup} checked/>
                 <label className={style.labelFilter} htmlFor={`checkbox${input.text}`} >{input.text}</label>
             </div>
         </>

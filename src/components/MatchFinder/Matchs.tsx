@@ -26,7 +26,7 @@ interface Inputs {
 function Matchs(input : Input)
 {
     console.log("status vaut", input.status);
-    let reqFunction = [getMatches, getMyMatches, getUpcomingMatches, getFreeMatches]
+    const reqFunction = [getMatches, getMyMatches, getUpcomingMatches, getFreeMatches]
     const {isLoading, error, data } = useQuery(['fetchTest', input.status], reqFunction[input.status])
 
     if (isLoading)

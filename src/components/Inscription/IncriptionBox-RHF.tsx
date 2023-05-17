@@ -43,7 +43,7 @@ function InscriptionBox()
 
     watch();
     return (
-            <form onSubmit={handleSubmit(onSubmit)} className={style.form}>
+            <form onSubmit={handleSubmit(onSubmit)} className={style.form} data-testid="formInscr">
               <div className={style.elemBox}>
                   <input {...register("login", {
                     required: "Champs requis",
