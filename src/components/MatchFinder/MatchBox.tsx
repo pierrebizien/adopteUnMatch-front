@@ -10,7 +10,7 @@ interface Inputs {
     city: string,
     matchId: number,
     userId: number,
-    invalidateCallback : (matchId : number) => void
+    invalidateCallback : (matchId : number) => void;
 }
 
 function MatchBox (datas : Inputs) {

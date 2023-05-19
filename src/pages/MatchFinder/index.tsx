@@ -22,7 +22,7 @@ function MatchFinder()
         <>
             <div className={style.bodyPage}>
                 <NavBar />
-                <FilterBox changeStatus={setStatusFilter} statusFilter={statusFilter}/>
+                <FilterBox changePage={setPage} changeLastPage={setLastPage} changeStatus={setStatusFilter} statusFilter={statusFilter}/>
                 <Matchs status={statusFilter} page={page} setPage={setPage} setLastPage={setLastPage}/>
                 <div className={style.pagination}>
                     {page !== 1 &&

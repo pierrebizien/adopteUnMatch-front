@@ -1,0 +1,20 @@
+.playerBox{
+	display: flex;
+	justify-content: space-around;
+	background-color: white;
+	margin-bottom: 1vh;
+	border-radius: 5px;
+	&:hover {
+		background-color: rgb(222, 70, 0);
+		cursor: pointer;
+		color: white;
+	}
+	p {
+		font-family: "poppins";
+	}
+	height: 7vh;
+	align-items: center;
+}
+.important {
+	font-style: italic;
+}

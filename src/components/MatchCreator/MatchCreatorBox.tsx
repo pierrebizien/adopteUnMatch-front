@@ -44,7 +44,6 @@ function MatchCreatorBox() {
       <form onSubmit={handleSubmit(onSubmit)} className={style.form}>
         <div className={style.elems}>
           <div className={style.elemBox}>
-            <label htmlFor="dateMatch" >Date</label>
             <input
               {...register("date", {
                 required: "Champs requis",
@@ -61,7 +60,6 @@ function MatchCreatorBox() {
             )}
           </div>
           <div className={style.elemBox}>
-          <label htmlFor="cityMatch">Ville</label>
             <select {...register("city", {
             required: "Champs requis"})} 
                 id="cityMatch" placeholder="Ville"
@@ -77,7 +75,7 @@ function MatchCreatorBox() {
               Créer le match
             </button>
           </div>
-          {statusCreation && <p>Match créé</p>}
+          {statusCreation && <p className={style.infoCreation}>Match créé</p>}
        </div>
       </form>
   );
