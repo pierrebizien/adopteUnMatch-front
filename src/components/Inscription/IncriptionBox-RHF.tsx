@@ -110,7 +110,7 @@ function InscriptionBox()
               <div>
                   <a href="/Connexion" className={style.connexionLink}>Se connecter</a>
               </div>
-              {messageErrServeur !== "" && <p>{messageErrServeur}</p>}
+              {messageErrServeur !== "" && <p className={style.errServ}>{messageErrServeur}</p>}
           </form>
     )
 }

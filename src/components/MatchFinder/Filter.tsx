@@ -6,6 +6,8 @@ interface Input
     code : number,
     nameGroup : string,
     changeStatus : (status: number) => void,
+    changePage : (status: number) => void,
+    changeLastPage : (status: boolean) => void,
     statusFilter : number    
 }
 
@@ -13,6 +15,9 @@ function Filter(input : Input)
 {
     function handleChange() {
         input.changeStatus(input.code);
+		input.changePage(1);
+		input.changeLastPage(false);
+
     }
     console.log('TOP',input.code, input.statusFilter)
     let bool = false;

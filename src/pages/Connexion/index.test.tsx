@@ -10,9 +10,9 @@ import { it, describe, expect } from "vitest";
 expect.extend(matchers);
 
 describe("Page Connexion", () => {
-  it("should display an error if credentials are incorrects", async () => {
+  it("should display an error if Password is empty", async () => {
     render(<Connexion />);
-    await userEvent.type(screen.getByLabelText("login"), "toto");
+    await userEvent.type(screen.getByLabelText("Login"), "toto");
     await userEvent.click(screen.getByText("Se connecter"))
     
     expect(screen.getByText("Champs requis")).toBeInTheDocument();
@@ -20,9 +20,9 @@ describe("Page Connexion", () => {
 
   it("should display an error message when password empty", async () => {
     // render(<Connexion />);
-    // await userEvent.type(screen.getByLabelText("Password"), "toto");
-    // await userEvent.keyboard(screen.getByLabelText("login"), "");
-   
+    await userEvent.clear(screen.getByLabelText("Login"));
+    await userEvent.type(screen.getByLabelText("Password"), "toto");
+
     await userEvent.click(screen.getByText("Se connecter"))
     
     //completer

@@ -1,10 +1,14 @@
 .avatar{
     // max-height: 100%;
-    height: auto;
-    width: 20vw;
+    height: 100%;
+    width: auto;
     align-self: self-start;
     // aspect-ratio: 1/1;
     // background-color: transparent;
+}
+
+.avatarDiv {
+	height: 100%;
 }
 
 .header{
@@ -34,6 +38,12 @@
     font-family: 'poppins';
     font-style: italic;
     margin: 0;
-    color: rgb(222, 70, 0);;
+    color: rgb(222, 70, 0);
     font-size: 4vmin;
+}
+
+.contentDiv {
+	height: 60vh;
+	display: flex;
+	justify-content: space-around;
 }

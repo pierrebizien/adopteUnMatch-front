@@ -10,6 +10,21 @@
 
 }
 
+.errServ{
+	@extend .wrongCreds;
+}
+
+.wrongCreds {
+	color: orangered;
+	font-size: 3vmin;
+	font-weight: bold;
+}
+.labels {
+	font-family: 'poppins';
+	// font-style: italic;
+	color: grey;
+}
+
 .inputBox {
     border:0.1vw solid rgb(255, 106, 0);
 }

@@ -64,7 +64,7 @@ function Matchs(input : Input)
                 <h1 className={style.titleMatch} >Matchs</h1>
                 <hr className={style.hr}/>
                 {/* <MatchBox /> */}
-                {data.map((item:any) => {
+                {data.map((item:any, index:number) => {
                    let nameAway;
                    if (!item.teamAway)
                         nameAway = null;
@@ -79,9 +79,10 @@ function Matchs(input : Input)
                          city: item.city,
                          matchId : item.id,
                          userId : item.userId,
-                         invalidateCallback : invalidateCallback
+                         invalidateCallback : invalidateCallback,
+						
                     };
-                    return (<MatchBox {...datas} />)
+                    return (<MatchBox {...datas} key={index}/>)
                     
                 })}
         </>

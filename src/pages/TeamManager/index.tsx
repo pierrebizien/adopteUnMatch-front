@@ -3,8 +3,8 @@ import avatar from '../../assets/avatar.png'
 import style from '../styles/teamManager.module.scss'
 import { useQuery } from "react-query"
 import { getMyTeam } from "../../requests/Global/global"
-import MyMatchs from "./MyMatchs"
-import MyPlayers from "./MyPlayers"
+import MyMatchs from "../../components/ManageTeam/MyMatchs"
+import MyPlayers from "../../components/ManageTeam/MyPlayers"
 function TeamManager()
 {
     const {isLoading, error, data } = useQuery(['fetchTeamInfos'], getMyTeam)
@@ -18,17 +18,18 @@ function TeamManager()
         <div>
             <NavBar />
             <div className={style.header}>
-                <div>
+                <div className={style.avatarDiv}>
                  <img className={style.avatar} src={avatar}/>
-                </div>
-                <div className={style.textHeader}>
+            </div>
+            <div className={style.textHeader}>
                  <h1 className={style.nameTeam} >{data.name}</h1>
                  <h2 className={style.cityTeam}>{data.city}</h2>
-                </div>
             </div>
-            <MyPlayers data={data}/>
-            <MyMatchs />
-                
+        </div>
+		<div className={style.contentDiv}>
+			<MyPlayers data={data}/>
+			<MyMatchs />
+		</div>
                 {/* <MyMatchs />
                 <MyPlayers /> */}
         </div>

@@ -36,7 +36,7 @@ function ConnexionBox() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={style.form}>
       <div className={style.elemBox}>
-        <label htmlFor="loginInput">login</label>
+        <label className={style.labels} htmlFor="loginInput">Login</label>
         <input
           {...register("login", {
             required: "Champs requis",
@@ -50,7 +50,7 @@ function ConnexionBox() {
         )}
       </div>
       <div className={style.elemBox}>
-        <label htmlFor="passwordInput">Password</label>
+        <label className={style.labels} htmlFor="passwordInput">Password</label>
         <input
           {...register("password", {
             required: "Champs requis",
@@ -74,7 +74,7 @@ function ConnexionBox() {
           S'inscrire
         </a>
       </div>
-      {incorrectCreds && <p>Credentials incorrects</p>}
+      {incorrectCreds && <p className={style.wrongCreds}>Credentials incorrects</p>}
     </form>
   );
 }
